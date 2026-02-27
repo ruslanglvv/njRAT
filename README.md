@@ -1,4 +1,4 @@
-# njRAT Analysis Report
+# njRAT Malware Analysis Report
 
 ---
 
