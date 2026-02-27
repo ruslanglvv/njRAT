@@ -1,6 +1,4 @@
-# Malware Analysis Report
-
-## njRAT Variant Analysis
+# njRAT Analysis Report
 
 ---
 
@@ -21,9 +19,8 @@ The function labeled `INS` is responsible for installation and persistence.
 
 The malware copies itself into a designated directory and attempts to disguise its presence.
 
-📸 **[Screenshot 1 – Self-copy routine in INS function]**
-![[Annotation 2026-02-24 174308.png]]
-![photo1](/image1.png)
+ **[Screenshot 1 – Self-copy routine in INS function]**
+![photo1](njRAT_Screenshots/image1.png)
 
 
 
@@ -37,8 +34,8 @@ netsh firewall add allowedprogram
 
 This command adds the malware executable to Windows Firewall exceptions, allowing inbound communication required for RAT control.
 
-📸 **[Screenshot 2 – Firewall exception command in code]**
-![[Annotation 2026-02-24 174308 1.png]]
+ **[Screenshot 2 – Firewall exception command in code]**
+![photo1](njRAT_Screenshots/image2.png)
 
 ---
 
@@ -53,8 +50,8 @@ The malware writes itself into:
 
 It ensures execution at system startup by modifying autorun registry keys. It also periodically verifies and restores these entries if removed.
 
-📸 **[Screenshot 3 – Registry persistence (HKCU & HKLM)]
-![[Annotation 2026-02-26 103748.png]]**
+ **[Screenshot 3 – Registry persistence (HKCU & HKLM)]
+![photo1](njRAT_Screenshots/image3.png)
 
 ---
 
@@ -71,8 +68,8 @@ The sample contains a USB propagation mechanism:
 - Hides the files
     
 
-📸 **[Screenshot 4 – USB spread routine and autorun.inf creation]**
-![[Annotation 2026-02-26 104219.png]]
+ **[Screenshot 4 – USB spread routine and autorun.inf creation]**
+![photo1](njRAT_Screenshots/image4.png)
 
 ---
 
@@ -89,8 +86,8 @@ The `RC` function establishes communication with the remote C2 server.
 - Passes payload to `im` function
     
 
-📸 **[Screenshot 5 – RC function network handling logic]**
-![[Annotation 2026-02-26 105143.png]]
+ **[Screenshot 5 – RC function network handling logic]**
+![photo1](njRAT_Screenshots/image5.png)
 
 ---
 
@@ -119,11 +116,11 @@ Detected commands include:
 - Beep/piano sounds
     
 
-📸 **[Screenshot 6 – Command parsing inside im function]
-![[Annotation 2026-02-25 105704.png]]**
+ **[Screenshot 6 – Command parsing inside im function]
+![photo1](njRAT_Screenshots/image6.png)
 
-📸 **[Screenshot 7 – Registry sabotage commands]**
-![[Annotation 2026-02-26 111343.png]]
+ **[Screenshot 7 – Registry sabotage commands]**
+![photo1](njRAT_Screenshots/image7.png)
 
 ---
 
@@ -142,8 +139,8 @@ The malware implements a UDP flooding mechanism:
 - Stop command (`udpstp`)
     
 
-📸 **[Screenshot 8 – UDP flood loop implementation]**
-![[Annotation 2026-02-26 110953.png]]
+ **[Screenshot 8 – UDP flood loop implementation]**
+![photo1](njRAT_Screenshots/image8.png)
 
 ---
 
@@ -157,8 +154,8 @@ hxxps://dl.dropbox.com/s/p84aaz28t0hepul/Pass.exe?dl=0
 
 Likely credential stealer module.
 
-📸 **[Screenshot 9 – Download & execute logic]**
-![[Annotation 2026-02-25 110918.png]]
+ **[Screenshot 9 – Download & execute logic]**
+![photo1](njRAT_Screenshots/image9.png)
 
 
 ---
@@ -178,8 +175,8 @@ The malware supports dynamic plugin loading:
 - Executes dynamically
     
 
-📸 **[Screenshot 11 – Plugin loading and reflection execution]**
-![[Annotation 2026-02-26 111654.png]]
+ **[Screenshot 11 – Plugin loading and reflection execution]**
+![photo1](njRAT_Screenshots/image10.png)
 
 ---
 
@@ -187,9 +184,9 @@ The malware supports dynamic plugin loading:
 
 The `WRK` function implements a polling-based keylogger:
 
-📸 **[Screenshot 12 – GetAsyncKeyState loop]**
+ **[Screenshot 12 – GetAsyncKeyState loop]**
 
-![[Annotation 2026-02-26 112058.png]]
+![photo1](njRAT_Screenshots/image11.png)
 
 
 ---
@@ -211,8 +208,8 @@ The malware detects:
 
 It disables the “End Process” button when termination is attempted.
 
-📸 **[Screenshot 15 – Anti-TaskManager detection logic]**
-![[Annotation 2026-02-26 112308.png]]
+ **[Screenshot 15 – Anti-TaskManager detection logic]**
+![photo1](njRAT_Screenshots/image12.png)
 
 ---
 
@@ -236,8 +233,8 @@ The malware collects:
 - Executable name
     
 
-📸 **[Screenshot 19 – System information gathering routine]**
-![[Annotation 2026-02-25 113719.png]]
+ **[Screenshot 19 – System information gathering routine]**
+![photo1](njRAT_Screenshots/image13.png)
 
 ---
 
