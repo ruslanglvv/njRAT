@@ -43,14 +43,14 @@ This command adds the malware executable to Windows Firewall exceptions, allowin
 
 The malware writes itself into:
 
-- HKCU
-    
-- HKLM
+- HKCU\Software\Microsoft\Windows\CurrentVersion\Run
+- 
+- HKLM\Software\Microsoft\Windows\CurrentVersion\Run
     
 
 It ensures execution at system startup by modifying autorun registry keys. It also periodically verifies and restores these entries if removed.
 
- **[Screenshot 3 – Registry persistence (HKCU & HKLM)]
+ **[Screenshot 3 – Registry persistence (HKCU & HKLM)]**
 ![photo1](njRAT_Screenshots/image3.png)
 
 ---
@@ -116,7 +116,7 @@ Detected commands include:
 - Beep/piano sounds
     
 
- **[Screenshot 6 – Command parsing inside im function]
+ **[Screenshot 6 – Command parsing inside im function]**
 ![photo1](njRAT_Screenshots/image6.png)
 
  **[Screenshot 7 – Registry sabotage commands]**
